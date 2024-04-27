@@ -1,26 +1,46 @@
-﻿// See https://aka.ms/new-console-template for more information
- Console.WriteLine("Hello, World!");
+﻿using FundamentosCSHARP.Models;
 
-decimal numero = 189.1m;
+internal class Program
+{
+    private static void Main(string[] args)
+    {
+        // Variables
+        Console.WriteLine("Hello, World!");
 
-char caracter = 'A';
+        decimal numero = 189.1m;
 
-bool siOno = true;
+        char caracter = 'A';
 
-string cadena = "hola mundo";
+        bool siOno = true;
 
-DateTime date = DateTime.Now;
+        string cadena = "hola mundo";
 
-int? numero2 = null;
+        DateTime date = DateTime.Now;
 
-Console.WriteLine(numero2.ToString());
+        int? numero2 = null;
+
+        Console.WriteLine(numero2.ToString());
 
 
-var nombre = "Alejandro Dueñas"; // Var es permitido en un metodo, no funciona como atributo de la clase
+        var nombre = "Alejandro Dueñas"; // Var es permitido en un metodo, no funciona como atributo de la clase
 
-var limite = 50;
-var persona = new { nombre = "Alejandro", apellido = "Dueñas", edad = 20 };
+        var limite = 50;
+        var persona = new { nombre = "Alejandro", apellido = "Dueñas", edad = 20 };
 
-Console.WriteLine(nombre);
+        Console.WriteLine(nombre);
 
-Console.WriteLine(persona.edad);
+        Console.WriteLine(persona.edad);
+
+        // Clases
+
+        Bebida bebida = new Bebida("Coca cola", 1000);
+        bebida.Beberse(550);
+
+        Console.WriteLine(bebida.Cantidad);
+
+        Cerveza cerveza = new Cerveza("Cerveza stout", 80);
+        cerveza.Beberse(10);
+
+        Console.WriteLine(cerveza.Cantidad);
+    }
+}

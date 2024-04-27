@@ -12,3 +12,4 @@ D:\Users\Alejandro Dueñas\source\repos\FundamentosCSHARP\FundamentosCSHARP\obj\
 D:\Users\Alejandro Dueñas\source\repos\FundamentosCSHARP\FundamentosCSHARP\obj\Debug\net8.0\FundamentosCSHARP.pdb
 D:\Users\Alejandro Dueñas\source\repos\FundamentosCSHARP\FundamentosCSHARP\obj\Debug\net8.0\FundamentosCSHARP.genruntimeconfig.cache
 D:\Users\Alejandro Dueñas\source\repos\FundamentosCSHARP\FundamentosCSHARP\obj\Debug\net8.0\ref\FundamentosCSHARP.dll
+D:\Users\Alejandro Dueñas\source\repos\FundamentosCSHARP\FundamentosCSHARP\obj\Debug\net8.0\FundamentosCSHARP.sourcelink.json
