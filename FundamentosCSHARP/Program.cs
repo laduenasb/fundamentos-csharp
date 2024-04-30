@@ -42,5 +42,41 @@ internal class Program
         cerveza.Beberse(10);
 
         Console.WriteLine(cerveza.Cantidad);
+
+        // Arreglos y listas
+
+        int[] numeros = new int[10] { 1, 2, 3, 4, 5, 6, 7, 8, 9, 0 };
+        int numero_x = numeros[9];
+
+        for (int i = 0; i < numeros.Length; i++)
+        {
+            Console.WriteLine("Iteración: "+i+" - "+numeros[i]);
+        }
+
+        foreach (var numero_i in numeros)
+        {
+            Console.WriteLine(numero_i);
+        }
+        Console.WriteLine("**************************************");
+
+        List<int> lista = new List<int>() { 1, 2, 3, 4, 5, 6, 7, 8};
+        lista.Add(9);
+        lista.Add(10);
+        lista.Remove(2);
+
+        foreach (var numero_i in lista)
+        {
+            Console.WriteLine("Elemento: "+numero_i);
+        }
+
+        List<Cerveza> lista_cervezas = new List<Cerveza>() { new Cerveza("Heineken", 500)};
+        lista_cervezas.Add(new Cerveza("Poker"));
+        Cerveza erdinger = new Cerveza("Cerveza de trigo", 500);
+        lista_cervezas.Add(erdinger);
+
+        foreach(var cerveza_i in lista_cervezas)
+        {
+            Console.WriteLine("Cerveza: " + cerveza_i.Nombre);
+        }
     }
 }
