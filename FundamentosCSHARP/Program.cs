@@ -78,5 +78,19 @@ internal class Program
         {
             Console.WriteLine("Cerveza: " + cerveza_i.Nombre);
         }
+
+        // Interfaces
+
+        Console.WriteLine("**************************************************");
+
+        var bebidaAlcoholica = new Cerveza("Cervaza roja");
+        Console.WriteLine(bebidaAlcoholica.Nombre);
+        MostrarRecomendacion(bebidaAlcoholica);
+        List<String> hola = new List<String>();
+    }
+
+    static void MostrarRecomendacion(IBebidaAlcoholica bebida)
+    {
+        bebida.MaxRecomendado();
     }
 }
