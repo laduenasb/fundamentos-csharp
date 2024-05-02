@@ -9,6 +9,7 @@ namespace FundamentosCSHARP.Models
     internal class Cerveza : Bebida, IBebidaAlcoholica
     {
         public int Alcohol { get; set; }
+        public string Marca { get; set; }
         public void MaxRecomendado() 
         {
             Console.WriteLine("El máximo permitido de una cerveza son 10");

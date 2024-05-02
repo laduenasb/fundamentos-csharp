@@ -87,6 +87,17 @@ internal class Program
         Console.WriteLine(bebidaAlcoholica.Nombre);
         MostrarRecomendacion(bebidaAlcoholica);
         List<String> hola = new List<String>();
+
+        Console.WriteLine("****************************************************");
+
+        CervezaBD cervezaBD = new CervezaBD();
+
+        var cervezas = cervezaBD.Get();
+
+        foreach(var cerveza_lista in cervezas)
+        {
+            Console.WriteLine(cerveza_lista.Nombre);
+        }
     }
 
     static void MostrarRecomendacion(IBebidaAlcoholica bebida)
