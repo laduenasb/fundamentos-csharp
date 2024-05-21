@@ -92,12 +92,42 @@ internal class Program
 
         CervezaBD cervezaBD = new CervezaBD();
 
+        // Insertamos una nueva cerveza
+        /*
+        {
+            Cerveza cerveza_nueva = new Cerveza("Pale ale", 80);
+            cerveza_nueva.Marca = "Minerva";
+            cerveza_nueva.Alcohol = 4;
+            cervezaBD.Add(cerveza_nueva);
+        }
+        */
+
+        // Editamos una cerveza
+        /*
+        {
+            Cerveza cerveza_nueva = new Cerveza("Pale ale 2", 50);
+            cerveza_nueva.Marca = "Minerva 2";
+            cerveza_nueva.Alcohol = 5;
+            cervezaBD.Edit(cerveza_nueva, 5);
+        }
+        */
+
+        // Eliminamos una cerveza
+        {
+            cervezaBD.Delete(5);
+        }
+
+        {
+
+        }
+
+        // Obtener todas las cervezas
         var cervezas = cervezaBD.Get();
 
         foreach(var cerveza_lista in cervezas)
         {
             Console.WriteLine(cerveza_lista.Nombre);
-        }
+        }   
     }
 
     static void MostrarRecomendacion(IBebidaAlcoholica bebida)

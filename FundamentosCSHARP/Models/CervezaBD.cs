@@ -43,5 +43,58 @@ namespace FundamentosCSHARP.Models
 
                 return cervezas;
         }
+
+        public void Add(Cerveza cerveza)
+        {
+            // Agregar la cerveza a la base de datos
+
+            string query = "INSERT INTO cerveza (nombre, marca, alcohol, cantidad) " +
+                "VALUES (@nombre, @marca, @alcohol, @cantidad)";
+
+            using (SqlConnection connection = new SqlConnection(connectionString))
+            {
+                SqlCommand command = new SqlCommand(query, connection);
+                command.Parameters.AddWithValue("@nombre", cerveza.Nombre);
+                command.Parameters.AddWithValue("@marca", cerveza.Marca);
+                command.Parameters.AddWithValue("@alcohol", cerveza.Alcohol);
+                command.Parameters.AddWithValue("@cantidad", cerveza.Cantidad);
+                connection.Open();
+                command.ExecuteNonQuery();
+                connection.Close();
+            }
+        }
+
+        public void Edit(Cerveza cerveza, int Id)
+        {
+            string query = "UPDATE cerveza SET nombre = @nombre, marca = @marca, alcohol = @alcohol, cantidad = @cantidad " +
+                "WHERE id = @id";
+
+            using (SqlConnection connection = new SqlConnection(connectionString))
+            {
+                SqlCommand command = new SqlCommand(query, connection);
+                command.Parameters.AddWithValue("@id", Id);
+                command.Parameters.AddWithValue("@nombre", cerveza.Nombre);
+                command.Parameters.AddWithValue("@marca", cerveza.Marca);
+                command.Parameters.AddWithValue("@alcohol", cerveza.Alcohol);
+                command.Parameters.AddWithValue("@cantidad", cerveza.Cantidad);
+                connection.Open();
+                command.ExecuteNonQuery();
+                connection.Close();
+            }
+        }
+
+        public void Delete(int Id)
+        {
+            string query = "DELETE FROM cerveza WHERE id = @id";
+
+            using (SqlConnection connection = new SqlConnection(connectionString))
+            {
+                SqlCommand command = new SqlCommand(query, connection);
+                command.Parameters.AddWithValue("@id", Id);
+                connection.Open();
+                command.ExecuteNonQuery();
+                connection.Close();
+            }
+        }
     }
 }
